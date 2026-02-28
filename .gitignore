@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.venv/
+
+# Build outputs
+dist/
+.output/
+*.pyc
+__pycache__/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Turbo
+.turbo/
+
+# Test
+coverage/
+.pytest_cache/
+
+# Docker
+postgres_data/
+
+# Generated
+routeTree.gen.ts

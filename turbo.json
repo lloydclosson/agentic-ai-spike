@@ -1,0 +1,44 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/biome.json", "$TURBO_ROOT$/tsconfig.json"],
+      "outputs": ["dist/**", ".output/**"]
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "tests/**", "**/*.test.ts", "**/*.spec.ts", "**/*_test.py"],
+      "outputs": ["coverage/**", ".pytest_cache/**"]
+    },
+    "lint": {
+      "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/biome.json"],
+      "outputs": []
+    },
+    "lint:fix": {
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": [],
+      "cache": false
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/tsconfig.json"],
+      "outputs": []
+    },
+    "db:generate": {
+      "outputs": ["drizzle/**"],
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "agentic-ai-spike",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
+    "format": "biome format --write .",
+    "typecheck": "turbo typecheck",
+    "dev:docker": "bash scripts/dev-docker.sh",
+    "dev:docker:stop": "bash scripts/dev-docker-stop.sh",
+    "dev:docker:rebuild": "bash scripts/dev-docker-rebuild.sh"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
+    "turbo": "^2.5.0",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
