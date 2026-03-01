@@ -4,29 +4,31 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/main.ts",
+    "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/main.js",
+    "start": "node dist/server.js",
     "typecheck": "tsc --noEmit",
     "lint": "biome check .",
     "lint:fix": "biome check --fix .",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:push": "drizzle-kit push"
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "tsx src/db/seed.ts"
   },
   "dependencies": {
-    "@pothos/core": "^4.3.0",
-    "@pothos/plugin-drizzle": "^0.16.0",
     "dotenv": "^16.4.0",
-    "drizzle-orm": "1.0.0-beta.9-c26fd2f",
+    "drizzle-orm": "^0.39.0",
     "graphql": "^16.10.0",
     "graphql-yoga": "^5.10.0",
     "postgres": "^3.4.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
-    "drizzle-kit": "1.0.0-beta.9-c26fd2f",
+    "drizzle-kit": "^0.30.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
   }
 }
